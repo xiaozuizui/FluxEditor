@@ -1,0 +1,6 @@
+add_library(core "core.cpp")
+include_directories(${PBRT_HEADER_DIR})
+target_include_directories(core PUBLIC ${PBRT_HEADER_DIR})
+target_compile_definitions (core PRIVATE ${PBRT_DEFINITIONS})
+message(STATUS "IN" ${PBRT_DEFINITIONS})
+target_link_libraries(core PUBLIC entt pbrt_lib)
